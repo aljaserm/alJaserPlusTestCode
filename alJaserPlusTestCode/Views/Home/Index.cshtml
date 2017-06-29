@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>alJaser Plus</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+
+<body>
+        <h1>Search for a Name Here</h1>
+        <div ng-app="searchEmployee" ng-controller="contorlEmployee">
+            <input type="text" placeholder="Search Employee" ng-model="Employee" />
+            <table border="1">
+                <tr>
+                    <th>Employee Name</th>
+                    <th>Count</th>
+                </tr>
+                <tr ng-repeat="x in list=(mentioned | filter : Employee)">
+                    <td>{{ x.Name }}</td>
+                    <td>{{ list.length }}</td>
+                </tr>
+            </table>
+          </div>
+            <script>
+                var app = angular.module('searchEmployee', []);
+                app.controller('contorlEmployee', function ($scope, $http) {
+
+                    $scope.mentioned = [{ Name: 'Mohammed O alJaser' },
+                    { Name: 'Connor Gary Smith' },
+                    { Name: 'Seth David Greenly' },
+                    { Name: 'Sushil Acharya' },
+                    { Name: 'Connor Gary Smith' },
+                    { Name: 'Ashely Austin' },
+                    { Name: 'Seth David Greenly' },
+                    { Name: 'Ashely Austin' },
+                    { Name: 'Jenny Oliver' },
+                    { Name: 'Mohammed Omar alJaser' },
+                    { Name: 'Jenny Oliver' },
+                    { Name: 'Jenny Oliver' },
+                    { Name: 'Sushil Acharya' },
+                    { Name: 'Seth David Greenly' },
+                    { Name: 'Patrick Henry' },
+                    { Name: 'Seth David Greenly' },
+                    { Name: 'Mohammed O. alJaser' }];
+                });
+            </script>
+</body>
+</html>
